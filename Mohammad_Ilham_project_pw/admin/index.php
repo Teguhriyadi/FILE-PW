@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,7 +35,7 @@
 							<br />
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-								<input type="text" class="form-control" name="id_user" placeholder="Username " />
+								<input type="text" class="form-control" name="nama_user" placeholder="Username " />
 							</div>
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i class="fa fa-lock"  ></i></span>

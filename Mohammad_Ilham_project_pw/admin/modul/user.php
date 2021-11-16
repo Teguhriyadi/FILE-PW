@@ -45,8 +45,8 @@ switch ($_GET['act']) {
 				<div class="panel-body">
 					<form method="POST" action="aksi.php?module=user&act=input">
 						<div class="form-group">
-							<label for="username"> Username </label>
-							<input type="text" class="form-control" id="username" name="id_user" placeholder="Masukkan Username">
+							<label for="nama_user"> Username </label>
+							<input type="text" class="form-control" id="nama_user" name="nama_user" placeholder="Masukkan Username">
 						</div>
 						<div class="form-group">
 							<label for="password"> Password </label>
@@ -72,7 +72,7 @@ switch ($_GET['act']) {
 
 	<?php
 	$id_user = $_GET['id'];
-	$edit = mysqli_query($link, "SELECT * FROM admin WHERE id_user = '$id_user' ");
+	$edit = mysqli_query($link, "SELECT * FROM tb_admin WHERE nama_user = '$id_user' ");
 	$r = mysqli_fetch_array($edit);
 
 	?>
@@ -133,7 +133,7 @@ switch ($_GET['act']) {
 							<thead>
 								<tr>
 									<th class="text-center">No.</th>
-									<th>Username</th>
+									<th>Nama User</th>
 									<th>Password</th>
 									<th class="text-center">Aksi</th>
 								</tr>
@@ -141,18 +141,18 @@ switch ($_GET['act']) {
 							<tbody>
 								<?php
 								$no = 1;
-								$tampil = mysqli_query($link, "SELECT * FROM admin ORDER BY id_user");
+								$tampil = mysqli_query($link, "SELECT * FROM tb_admin ORDER BY nama_user DESC");
 								while ($r = mysqli_fetch_array($tampil)) {
 									?>
 									<tr>
 										<td class="text-center"><?php echo $no++ ?>.</td>
-										<td><?php echo $r['id_user'] ?></td>
+										<td><?php echo $r['nama_user'] ?></td>
 										<td><?php echo $r['password'] ?></td>
 										<td class="text-center">
 											<a class="btn btn-warning btn-sm" href="?module=user&act=edituser&id=<?php echo $r['id_user'] ?>">
 												<i class="fa fa-pencil"></i> Edit
 											</a> |
-											<a class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Benar Akan Menghapus User <?php echo $r['id_user'] ?> ? ')" href="aksi.php?module=user&act=hapus&id=<?php echo $r['id_user'] ?>">
+											<a class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Benar Akan Menghapus User <?php echo $r['nama_user'] ?> ? ')" href="aksi.php?module=user&act=hapus&id_admin=<?php echo $r['id_admin'] ?>">
 												<i class="fa fa-trash-o"></i> Hapus
 											</a>
 										</td>

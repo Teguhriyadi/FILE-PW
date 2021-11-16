@@ -28,6 +28,20 @@ if (!empty($_SESSION['namauser']) and !empty($_SESSION['passuser'])) {
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 	<!-- TABLE STYLES-->
 	<link href="../include/layouts/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="../include/tiny_mce/tiny_mce.js"></script> 
+	<script type="text/javascript"> 
+	tinyMCE.init({          
+		// General options          
+		mode : "textareas",          
+		theme : "advanced",          
+		theme_advanced_toolbar_location : "top",          
+		theme_advanced_toolbar_align : "left",          
+		theme_advanced_statusbar_location : "bottom",          
+		theme_advanced_resizing : true, 
+	}); 
+	</script>
+
 </head>
 <body>
 	<div id="wrapper">
